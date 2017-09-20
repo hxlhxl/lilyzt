@@ -1,0 +1,23 @@
+@mixin errorStyle {
+  border: 1px solid $mediumlightred;
+  background: $extralightred;
+}
+
+@mixin btnDisabledColor($fontcolor) {
+  color: rgba(red($fontcolor), green($fontcolor), blue($fontcolor), 0.4) !important;
+}
+
+@mixin placeholder($property: 'input', $color: #b3b3b3) {
+  #{$property}::-webkit-input-placeholder { /* WebKit browsers */
+    color: $color !important;
+  }
+  #{$property}:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $color !important;
+  }
+  #{$property}::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $color !important;
+  }
+  #{$property}:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $color !important;
+  }
+}

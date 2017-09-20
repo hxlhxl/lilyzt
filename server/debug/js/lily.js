@@ -1,0 +1,1 @@
+window.lily = 'candy-lily'

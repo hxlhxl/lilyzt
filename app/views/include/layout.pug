@@ -1,0 +1,40 @@
+include config.pug
+
+block config
+  - var current = 'layout'
+  - var pageTitle = 'Html Layout'
+
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title= pageTitle
+    script(src=`${self.htmlWebpackPlugin.options.staticPath}js/${manifest}.js`)
+    if (`${self.htmlWebpackPlugin.options.staticPath}` === '/')
+      link(rel="stylesheet", href=`${self.htmlWebpackPlugin.options.staticPath}css/${self.htmlWebpackPlugin.options.baseCss}.css`)
+      link(rel="stylesheet", href=`${self.htmlWebpackPlugin.options.staticPath}css/index.css`)
+    else
+      link(rel="stylesheet", href=`${self.htmlWebpackPlugin.options.staticPath}/css/${self.htmlWebpackPlugin.options.baseCss}.css`)    
+      link(rel="stylesheet", href=`${self.htmlWebpackPlugin.options.staticPath}css/index.css`)
+    link(rel="stylesheet", href="/debug/css/"+ current +".css")
+  body
+
+    include header.pug
+
+    block main
+      // page content will come here.
+    include footer.pug
+    
+    if (`${self.htmlWebpackPlugin.options.staticPath}` === '/')
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}js/${manifest}.js`)
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}js/${vendor}.js`)
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}js/${self.htmlWebpackPlugin.options.base}.js`)
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}js/${current}.js`)
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}js/${self.htmlWebpackPlugin.options.pluginVar_1}.js`)
+    else
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}/js/${manifest}.js`)
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}/js/${vendor}.js`)
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}js/${self.htmlWebpackPlugin.options.base}.js`)
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}/js/${current}.js`)
+      script(src=`${self.htmlWebpackPlugin.options.staticPath}/js/${self.htmlWebpackPlugin.options.pluginVar_1}.js`)
+    

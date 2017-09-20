@@ -1,0 +1,30 @@
+@import "../../components/style/index.scss";
+
+#header {
+    @include flexbox;
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include size(100%,60px);
+    background-color: $darkBlack;
+    .logo-wrap {
+        .logo-img {
+            @include size(40px,80%);
+            display: inline-block;
+        }
+        .site-motto {
+            display: inline-block;
+            color: $font;
+            font-size: $font-size-16;
+        }
+    }
+    .nav {
+        height: 100%;
+        @include flexbox;
+        @include flex-direction(space-between);
+        @include margin-lr(null,20px);
+        .nav-item {
+            @include size(40px,100%);
+            font-size: $font-size-16;
+        }
+    }
+}

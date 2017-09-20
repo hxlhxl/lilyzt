@@ -1,0 +1,55 @@
+{
+  "name": "lilyzt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "appPath": "/home/husa/workspace/env/go/src/lilyzt",
+    "serverPath": "server",
+    "clientPath": "app",
+    "goServerPath": "lilyzt/server"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=development webpack --colors --display-error-details --config webpack/dev.js",
+    "client": "npm run build && cross-env NODE_ENV=development webpack-dev-server --progress --config webpack/dev.js --inline",
+    "serverx": " cd $npm_package_config_serverPath && cross-env GO_ENV=development  rerun $npm_package_config_goServerPath",
+    "server": " cd $npm_package_config_serverPath && cross-env GO_ENV=development  go-reload main.go",
+    "app": "npm run client && npm run server",
+    "clean": "rm -rf server/debug/* server/views/*",
+    "pug": "sh init/pug.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-import": "^1.4.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "chokidar": "^1.7.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.7",
+    "expose-loader": "^0.7.3",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "jquery": "^3.2.1",
+    "module": "^1.2.5",
+    "net": "^1.0.2",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0",
+    "webpack-md5-hash": "0.0.5",
+    "webpack-merge": "^4.1.0",
+    "write-file-webpack-plugin": "^4.1.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "cross-env": "^5.0.5",
+    "webpack-dev-server": "^2.8.2"
+  }
+}

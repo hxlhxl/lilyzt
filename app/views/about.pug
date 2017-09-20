@@ -1,0 +1,21 @@
+extends include/layout
+
+append config
+  - var current = 'about'
+  - var pageTitle = 'About Layout'
+block main 
+  
+  //- hero section
+  .main
+    h1
+      | Lily Candy About a
+    p.
+      | lily is my candy
+  
+  //- main section
+  main.main
+    h2 What a beautiful day!
+    p 
+      | p1
+    p 
+      |p2
