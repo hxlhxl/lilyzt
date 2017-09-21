@@ -28,6 +28,7 @@ npm install --save-dev babel-preset-es2015
 npm install --save-dev style-loader
 npm install --save-dev css-loader
 npm install --save-dev sass-loader
+npm install --save-dev url-loader
 # npm install --save-dev node-sass          # 直接安装在全局
 sudo npm install -g node-sass
 

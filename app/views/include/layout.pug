@@ -17,13 +17,14 @@ html
       link(rel="stylesheet", href=`${self.htmlWebpackPlugin.options.staticPath}/css/${self.htmlWebpackPlugin.options.baseCss}.css`)    
       link(rel="stylesheet", href=`${self.htmlWebpackPlugin.options.staticPath}css/index.css`)
     link(rel="stylesheet", href="/debug/css/"+ current +".css")
+    script(src="https://buttons.github.io/buttons.js" defer async)
   body
+    #app-body
+      include header.pug
 
-    include header.pug
-
-    block main
-      // page content will come here.
-    include footer.pug
+      block main
+        // page content will come here.
+      include footer.pug
     
     if (`${self.htmlWebpackPlugin.options.staticPath}` === '/')
       script(src=`${self.htmlWebpackPlugin.options.staticPath}js/${manifest}.js`)
@@ -37,4 +38,3 @@ html
       script(src=`${self.htmlWebpackPlugin.options.staticPath}js/${self.htmlWebpackPlugin.options.base}.js`)
       script(src=`${self.htmlWebpackPlugin.options.staticPath}/js/${current}.js`)
       script(src=`${self.htmlWebpackPlugin.options.staticPath}/js/${self.htmlWebpackPlugin.options.pluginVar_1}.js`)
-    

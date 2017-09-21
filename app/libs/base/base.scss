@@ -1,5 +1,13 @@
 @import "../../components/style/index.scss";
 
+
+#app-body {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    min-height: 800px;
+}
+
 #header {
     @include flexbox;
     @include flex-direction(row);
@@ -27,4 +35,26 @@
             font-size: $font-size-16;
         }
     }
+}
+
+.root {
+    flex-grow: 1;
+    @include flexbox;
+    // flex: 1;
+    // height: 100%;
+    // display: flex;
+    // flex: 1 0 auto; /* 2 */
+    // flex-direction: column;
+    // padding: var(--space);
+    // min-height: 800px;
+    // flex: 1 1 auto;
+    // overflow: auto;
+}
+
+#footer {
+    @include flexbox;
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include size(100%,60px);
+    background-color: $darkBlack;
 }

@@ -1,0 +1,12 @@
+@import "../../components/style/index.scss";
+
+.root {
+    #article {
+        background-color: red;
+        width: 80%
+    }
+    #nav-utility {
+        background-color: yellowgreen;
+        flex-grow: 1;
+    }
+}

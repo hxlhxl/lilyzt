@@ -198,6 +198,7 @@ module.exports = {
         alias: {
             components: path.resolve(clientPath, './components'),
             utils: path.resolve(clientPath, './utils'),
+            sources: path.resolve(clientPath, './sources'),
         },
     },
     // 解决web项目中webpack Can't resolve 'fs'的问题
