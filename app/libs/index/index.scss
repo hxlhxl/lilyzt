@@ -1,12 +1,19 @@
 @import "../../components/style/index.scss";
 
 .root {
+    // todo: 流式布局
     #article {
-        background-color: red;
-        width: 80%
+        // todo: bootstrap中的响应式布局col-sm-8
+        width: 80%;
+        .posts {
+            @include margin-tb(70px,null);
+        }
     }
     #nav-utility {
-        background-color: yellowgreen;
         flex-grow: 1;
     }
+}
+
+.post {
+    
 }

@@ -14,7 +14,7 @@
     "build": "cross-env NODE_ENV=development webpack --colors --display-error-details --config webpack/dev.js",
     "client": "npm run build && cross-env NODE_ENV=development webpack-dev-server --progress --config webpack/dev.js --inline",
     "serverx": " cd $npm_package_config_serverPath && cross-env GO_ENV=development  rerun $npm_package_config_goServerPath",
-    "server": " cd $npm_package_config_serverPath && cross-env GO_ENV=development  go-reload main.go",
+    "server": " cd $npm_package_config_serverPath && cross-env GO_ENV=development  go-reload app.go",
     "app": "npm run client && npm run server",
     "clean": "rm -rf server/debug/* server/views/*",
     "pug": "sh init/pug.sh"
